@@ -12,3 +12,5 @@ logs
 results
 
 npm-debug.log
+
+app/server/credentials.js
