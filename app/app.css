@@ -1,102 +1,105 @@
-body{
-  background-color:#31373c;
-  color:#fff;
-  font-family:helvetica, arial, sans;
-  margin:0; padding:0;
-  font-size:1.1em;
+#configure-login-service-dialog {
+	-webkit-box-shadow: 0px 0px 10px #000;
+	-moz-box-shadow: 0px 0px 10px #000;
+	box-shadow: 0px 0px 10px #000;
 }
 
-
-h1, h2, h3, h4 {
-  font-family: Raleway;
+/* From Rails Prelaunch */
+body {
+	padding-top:60px;
 }
 
-.header{
-  width:100%;
-  background-color:#39c;
-  text-align:center;
-  padding:2em;
-  margin:0;
-  margin-bottom:1em;
+#content-wrapper {
+	background-color:#fff;
+	padding:20px;
+	margin:0 -20px;
+	-webkit-border-radius:0 0 6px 6px;
+	-moz-border-radius:0 0 6px 6px;
+	border-radius:0 0 6px 6px;
+	-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.15);
+	-moz-box-shadow:0 1px 2px rgba(0,0,0,0.15);
+	box-shadow:0 1px 2px rgba(0,0,0,0.15);
 }
 
-.content{
-  margin:0 auto;
-  width:30em;
-  padding:2em;
-  font-weight:light;
-  text-align:center;
+#welcome {
+	text-align:center;
 }
 
-.footer{
-  background-color:#3e464d;
-  position:fixed;
-  bottom:0;
-  width:40em;
-  margin:0 auto;
-  font-size:50%;
-}
-.footer a{
-  color:#2686c6;
-  text-decoration:none;
+#welcome .hero-unit {
+	background:url(./bg.png);
+	padding:40px;
 }
 
-form{
-  width:30em;
-  position:relative;
+#welcome h1 {
+	margin-bottom:40px;
 }
 
-input{
-  border-radius:2px 0 0 2px;
-  width: 80%;
-}
-button{
- background-color:#39c;
- color:#fff;
+#welcome #request-invite {
+	padding-top:20px;
 }
 
-button:hover{
-  background-color: #85cdf2;
-  cursor:pointer;
+#welcome #request-invite h1 {
+	color:#51A351;
+	margin-bottom:0;
 }
 
-input, button{
-  padding:8px 10px;
-  line-height: normal !important;
-  border:none;
-  margin:0;
-  vertical-align:middle;
-  font-size:20px;
-  -moz-box-sizing: content-box; /* or `border-box` */
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  }
-
-
-.mask {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    background-color: #000000;
-    opacity: .4;
-    z-index: 1;
+#welcome #request-invite .alert-error {
+	position:relative;
+	top:-15px;
+	margin-bottom:0;
 }
 
-
-.error {
-  color:#f47e67;
+#welcome .help-block {
+	font-size:10px;
+	color:gray;
+	margin-top:15px;
 }
 
-
-table{
-  border:1px solid #fff;
-  padding:2em;
-  margin:2em auto;
+#welcome #well {
+	margin-left:0;
+	text-align:left;
 }
 
-table td{
-  border-bottom:1px solid #3e464d;
-  padding:1em;
+#welcome .span4 label {
+	font-size:16px;
+	font-weight:700;
+	color:#0073CC;
+	position:relative;
+	top:-15px;
+	margin-bottom: 10px; // Total hack
+}
+
+#welcome .span4.text_only {
+	margin-top:5px;
+}
+
+#email-submit-error {
+	position: relative;
+	top: -10px;
+	margin-bottom: 0px;
+}
+
+#welcome #thanks {
+	position:relative;
+	top:-5px;
+	left:5px;
+}
+
+.btn.loading {
+	background-image:-webkit-gradient(linear,0 0,100% 100%,color-stop(0.25,rgba(0,0,0,0.1)),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(0,0,0,0.1)),color-stop(0.75,rgba(0,0,0,0.1)),color-stop(0.75,transparent),to(transparent));
+	background-image:-moz-linear-gradient(-45deg,rgba(0,0,0,0.1) 25%,transparent 25%,transparent 50%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.1) 75%,transparent 75%,transparent);
+	background-size:50px 50px;
+	-moz-background-size:50px 50px;
+	-webkit-background-size:50px 50px;
+	-webkit-animation:animate-stripes 2s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+	from {
+		background-position:0 0;
+	}
+	
+	to {
+		background-position:-50px 0;
+	}
 }
