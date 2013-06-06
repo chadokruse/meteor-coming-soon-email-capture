@@ -1,3 +1,16 @@
+## In process - not for public consumption!  
+  
+The goal of this project is threefold:  
+
+1. To provide a simple "coming soon" landing page with an email capture form (like the old LaunchRock) that integrates with Mailchimp.  
+
+2. Improve the signup experience by using the Mailchimp API instead of the standard embed code. We'll make an AJAX call to the API, and upon success, provide a simple "thank you" message instead of a jarring redirect to a Mailchimp success page.  
+
+3. Host it for free.
+
+This project merges a popular ruby on rails project with a meteor sample app. The [meteor project's](https://github.com/FrozenRidge/mongolab-meteor-leadcapture-app) README is included below in its entirety:
+
+
 mongolab-meteor-leadcapture-app
 ===============================
 
