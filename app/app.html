@@ -12,7 +12,7 @@
         <a href="/" class="brand">Meteor - Coming Soon Email Capture</a>
         <ul class='nav pull-right'>
           <li><a href="mailto:hello@example.com">Contact</a></li>
-          <!-- Login is only relevant to Admin users - moving to footer to demphasize
+          <!-- Login is only relevant to Admin users - moving to footer to de-emphasize
           <li><a href="/users/sign_in">Login</a></li>
           -->
         </ul>
@@ -24,9 +24,7 @@
       <div id='content-wrapper'>
         <div class='row'>
           <div class='span12'>
-
               {{> main }}
-
           </div>
         </div>
       </div>
@@ -39,6 +37,7 @@
 
   </body>
 
+
 <template name = "main">
  {{#if showAdmin}}
     {{> admin}}
@@ -46,6 +45,7 @@
     {{> landing}}
  {{/if}}
 </template>
+
 
 <template name = "landing">
   <div id="welcome">
@@ -65,9 +65,7 @@
               <input name="utf8" type="hidden" value="&#x2713;" />
               <input name="authenticity_token" type="hidden" value="qnDo3AedIaNnSEa70TumaMtY1yTkRXeIFONYaOW0RdA=" />
             </div>
-
             {{> signup}}
-
           </form>
         </div>
       </div>
@@ -75,13 +73,16 @@
   </div>
 </template>
 
+
 <template name = "footer">
-  <!--a href = "http://frozenridge.co">FrozenRidge | Solving hard problems for business</a-->
+  <!-- Hide original FrozenRidge brand and link. Ping them about including in new footer, if desired -->
+  <!-- <a href = "http://frozenridge.co">FrozenRidge | Solving hard problems for business</a> -->
   {{#if isAdmin}}
   <a href = "#" class = "admin">toggle admin</a>
   {{/if}}
   {{loginButtons}}
 </template>
+
 
 <template name = "signup">
   {{#if emailSubmitted }}
@@ -104,8 +105,6 @@
       <input class="btn btn-primary" id="invitation_button" name="commit" type="submit" value="Notify Me" /><p class="help-block">No spam. Just a heads up when we're ready for you.</p>
   {{/if}}
   </form>
-
-
 </template>
 
 
