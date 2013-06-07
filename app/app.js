@@ -12,6 +12,7 @@ function isAdmin() {
   }
 }
 
+
 if (Meteor.isClient) {
 
   Meteor.subscribe('userData');
@@ -44,7 +45,6 @@ if (Meteor.isClient) {
           Session.set("showBadEmail", true);
         } else {
           console.log("respJson: ", respJson);
-          //window.alert(respJson.length + ' tweets received.');
           
         }
       });
@@ -82,7 +82,9 @@ if (Meteor.isClient) {
 
 }
 
+
 if (Meteor.isServer) {
+
   // Mailchimp API Call
   Meteor.methods({
     fetchFromService: function(email) {
@@ -109,11 +111,13 @@ if (Meteor.isServer) {
     }
   });
 
+  // Github Login
   Meteor.publish("userData", function () {
     return Meteor.users.find({_id: this.userId},
       {fields: {'services.github.username': 1, 'username':1}});
   });
 
+  // Admin Email Subscriber View
   Meteor.publish("emails", function() {
     if (isAdmin) {
       return Emails.find();
