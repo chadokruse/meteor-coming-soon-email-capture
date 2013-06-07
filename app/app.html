@@ -20,30 +20,30 @@
     </nav>
   </header>
 
-    <div class='container'>
-      <div id='content-wrapper'>
-        <div class='row'>
-          <div class='span12'>
-              {{> main }}
-          </div>
+  <div class='container'>
+    <div id='content-wrapper'>
+      <div class='row'>
+        <div class='span12'>
+            {{> main }}
         </div>
       </div>
-      <footer class="navbar navbar-fixed-bottom">
-        <div class='footer'>
-          {{> footer }}
-        </div>
-      </footer>
     </div>
+    <footer class="navbar navbar-fixed-bottom">
+      <div class='footer'>
+        {{> footer }}
+      </div>
+    </footer>
+  </div>
 
-  </body>
+</body>
 
 
 <template name = "main">
- {{#if showAdmin}}
+  {{#if showAdmin}}
     {{> admin}}
- {{else}}
+  {{else}}
     {{> landing}}
- {{/if}}
+  {{/if}}
 </template>
 
 
@@ -54,7 +54,6 @@
       <p>And a witty tagline goes here<br>
         This is. What you. Might do. With it.</p>
     </div>
-
     <div id="well" class="row well">
       <div class="span4 offset2 text_only">We're fanatical about the speed of our service. To ensure a great experience for all of our users we're inviting people on a rolling basis. Enter your email to the right and we'll keep you posted on our progress. We'll get you your invite as soon as we can!
       </div>
@@ -91,14 +90,11 @@
       {{else }}
       <label style="display: block;">Launching soon.</label>
       {{/if}} 
-      <div class="">
-        <div class="input-prepend">
-          <span class="add-on"><i class="icon-envelope"></i></span>
-          <input type="text" value="" class="" id="email-for-mailchimp" placeholder="Your email address..." size="30">
-          <!--input type="email" value="" class="email mailchimp-email" name="EMAIL" id="mce-EMAIL" placeholder="Your email address..." size="30"-->
-        </div>
-          <input type="submit" value="Notify Me" name="submit" id="mailchimp-submit" class="btn btn-primary"><!--input type="submit" value="Notify Me" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary"--><p class="help-block">No spam. Just a heads up when we're ready for you.</p>
-      </div> 
+      <div class="input-prepend">
+        <span class="add-on"><i class="icon-envelope"></i></span>
+        <input type="text" value="" class="" id="email-for-mailchimp" placeholder="Your email address..." size="30">
+      </div>
+      <input type="submit" value="Notify Me" name="submit" id="mailchimp-submit" class="btn btn-primary"><p class="help-block">No spam. Just a heads up when we're ready for you.</p>
     </form>
   {{/if}}
 
