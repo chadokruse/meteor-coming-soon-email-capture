@@ -60,13 +60,7 @@
       </div>
       <div class="span4"> 
         <div id="request-invite" class="form-inline">
-          <form accept-charset="UTF-8" action="/users" class="simple_form form-inline" id="new_user" method="post" novalidate="novalidate">
-            <div style="margin:0;padding:0;display:inline">
-              <input name="utf8" type="hidden" value="&#x2713;" />
-              <input name="authenticity_token" type="hidden" value="qnDo3AedIaNnSEa70TumaMtY1yTkRXeIFONYaOW0RdA=" />
-            </div>
             {{> signup}}
-          </form>
         </div>
       </div>
     </div>
@@ -88,23 +82,26 @@
   {{#if emailSubmitted }}
   <div id="thanks">
     <h1>Thank You!</h1>
-    Like what we're up to? Tell your colleagues!
+    Check your inbox to confirm your email
   </div>
   {{else }}
-    <form>
+    <form id="mailchimp-email-capture">
       {{#if showBadEmail}}
         {{> badEmail}}
       {{else }}
       <label style="display: block;">Launching soon.</label>
-      {{/if}}
-      <div class="input-prepend">
-        <span class="add-on"><i class="icon-envelope"></i></span>
-        <input id="email" name="user[email]" placeholder="Your email address..." size="30" type="text" value="" />
-      </div>
-
-      <input class="btn btn-primary" id="invitation_button" name="commit" type="submit" value="Notify Me" /><p class="help-block">No spam. Just a heads up when we're ready for you.</p>
+      {{/if}} 
+      <div class="">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-envelope"></i></span>
+          <input type="text" value="" class="" id="email-for-mailchimp" placeholder="Your email address..." size="30">
+          <!--input type="email" value="" class="email mailchimp-email" name="EMAIL" id="mce-EMAIL" placeholder="Your email address..." size="30"-->
+        </div>
+          <input type="submit" value="Notify Me" name="submit" id="mailchimp-submit" class="btn btn-primary"><!--input type="submit" value="Notify Me" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary"--><p class="help-block">No spam. Just a heads up when we're ready for you.</p>
+      </div> 
+    </form>
   {{/if}}
-  </form>
+
 </template>
 
 
