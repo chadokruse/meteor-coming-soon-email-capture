@@ -11,6 +11,7 @@ Notable TODOs:
 Wishlist:
 
 1.  Custom "thank you" landing page (after user clicks the email confirmation link)
+2.  Move Github admin login button to a second page, accessible via an admin link on the main landing page
  
 ## meteor-coming-soon-email-capture  
 The goal of this project is threefold:  
