@@ -74,7 +74,7 @@ Note: Be sure meteor is not already running
 3.  **Change default admin usernames**  
 Located in app.js - line 6   
 ```
-var ADMIN_USERS = ['chadokruse'];
+var ADMIN_USERS = ['someusername', 'anotherperson', 'howaboutathird'];
 ```  
 Enter your github username
 
