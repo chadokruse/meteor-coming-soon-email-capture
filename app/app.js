@@ -90,7 +90,8 @@ if (Meteor.isServer) {
     fetchFromService: function(email) {
       var apiKey = Meteor.settings.mailchimpApiKey;
       var listId = Meteor.settings.mailchimpListId;
-      var url = "http://us5.api.mailchimp.com/1.3/?method=listSubscribe&apikey="+ apiKey +"&id="+ listId +"&email_address="+ encodeURIComponent(email) +"&output=json";
+      var apiEndPoint = apiKey.slice(-3); // Pull appropriate api endpoint datacenter from apiKey http://apidocs.mailchimp.com/api/rtfm/#api-endpoints
+      var url = "http://"+ apiEndPoint +".api.mailchimp.com/1.3/?method=listSubscribe&apikey="+ apiKey +"&id="+ listId +"&email_address="+ encodeURIComponent(email) +"&output=json";
       //synchronous POST
       var result = Meteor.http.post(url, {timeout:30000});
       if(result.statusCode==200) {
