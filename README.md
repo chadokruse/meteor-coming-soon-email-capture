@@ -6,7 +6,7 @@ Notable TODOs:
 2.  ~~Add API keys via settings.json~~
 3.  Security review & double check
 4.  Better error handling from Mailchimp API
-5.  ~~Documentation + finish "getting started" tutorial~~ Add Demo link
+5.  ~~Documentation + finish "getting started" tutorial~~
  
 ## meteor-coming-soon-email-capture  
 The goal of this project is threefold:  
@@ -20,7 +20,8 @@ The goal of this project is threefold:
 This project merges a popular [ruby on rails project](https://github.com/RailsApps/rails-prelaunch-signup) with a [meteor sample app](https://github.com/FrozenRidge/mongolab-meteor-leadcapture-app). Its sole purpose was to give me a reason to check out Meteor and improve my javascript skills, but hopefully you can find value in it.
 
 ### Demo
-Coming soon
+[Live demo](https://github.com/chadokruse/meteor-coming-soon-email-capture)  
+Please go easy on my Mailchimp account. I'll try to flush out any subscribed emails from time to time.
 
 ### Screenshots
 
