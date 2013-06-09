@@ -30,7 +30,7 @@ if (Meteor.isClient) {
 
   Template.signup.events({
     'submit form' : function (evt, tmpl) {
-      console.log("Form Input Button Clicked!");
+      console.log("Form Input Button Clicked");
       var email = tmpl.find('#email-for-mailchimp').value
       , doc = {email: email, referrer: document.referrer, timestamp: new Date()}
 
