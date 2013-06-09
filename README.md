@@ -7,6 +7,10 @@ Notable TODOs:
 3.  Security review & double check
 4.  Better error handling from Mailchimp API
 5.  ~~Documentation + finish "getting started" tutorial~~
+
+Wishlist:
+
+1.  Custom "thank you" landing page (after user clicks the email confirmation link)
  
 ## meteor-coming-soon-email-capture  
 The goal of this project is threefold:  
@@ -93,3 +97,13 @@ This code is provided "as is" with no warranties. It'll probably break and may e
 Do with it as you wish, commercial or otherwise. If you like formal licenses: Copyright (c) 2013 Chad Kruse, released under the MIT license.  
 
 See [original meteor app](https://github.com/FrozenRidge/mongolab-meteor-leadcapture-app) for licensing covering their work (github login, add email form entry to db, etc.)
+
+### Credits
+
+Original meteor app and awesome tutorial was created by [niallo](https://github.com/niallo) and [peterbraden](https://github.com/peterbraden) of [Frozen Ridge](http://frozenridge.co/).
+
+[This gist](https://gist.github.com/nachiket-p/2922814) from [nachiket-p](https://github.com/nachiket-p) helped me understand how external API calls work in Meteor.
+
+
+
+
