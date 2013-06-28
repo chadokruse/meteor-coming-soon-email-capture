@@ -22,6 +22,7 @@ Please go easy on my Mailchimp account. I'll try to flush out any subscribed ema
 ### Changes to [original meteor app](https://github.com/FrozenRidge/mongolab-meteor-leadcapture-app)
 1. Emails submitted will also be added to a Mailchimp account (in addition to the db), using [double opt-in](http://kb.mailchimp.com/article/how-does-confirmed-optin-or-double-optin-work).
 2. Added Twitter Bootstrap and a freely-usable placeholder design.
+3. Admin functionality has been removed from the main page and placed on a separate admin page, accessible only by navigating directly to /admin (e.g. localhost:3000/admin).
 
 See [original README](https://github.com/FrozenRidge/mongolab-meteor-leadcapture-app) for further details on the app. The fine folks at [Frozen Ridge](http://frozenridge.co/) also put together a great [blog post](http://blog.mongolab.com/2013/05/build-your-own-lead-capture-page-with-meteor-and-mongolab-in-minutes/) detailing how they built the app.
 
@@ -36,9 +37,8 @@ See [original README](https://github.com/FrozenRidge/mongolab-meteor-leadcapture
 ### Wishlist:
 
 1.  Custom "thank you" landing page (after user clicks the email confirmation link)
-2.  Move Github admin login button to a second page, accessible via an admin link on the main landing page (COMPLETED: See [separate_admin_page](https://github.com/chadokruse/meteor-coming-soon-email-capture/tree/separate_admin_page) branch. If using that branch, you need to install meteorite and add the router package.
-`npm install -g meteorite`  
-`mrt add router`
+2.  Move Github admin login button to a second page, accessible via an admin link on the main landing page (COMPLETED) 
+
 
 
 ## Getting started
@@ -56,6 +56,14 @@ I use Homebrew and found [this tutorial](http://madebyhoundstooth.com/blog/insta
 Install Meteor:
 
 `curl https://install.meteor.com | sh`
+
+Install Meteorite:
+
+`npm install -g meteorite` 
+
+Add Router package:
+
+`mrt add router`  
 
 cd into the app
 
@@ -76,7 +84,8 @@ Note: Here's [how to find your API Key](http://kb.mailchimp.com/article/where-ca
 
 2.  **Load your settings.json file**   
 `meteor --settings settings.json`  
-Note: Be sure meteor is not already running  
+Notes: (a) Be sure meteor is not already running. (b) If you're going to deploy this to meteor's free hosting (i.e. yourappname.meteor.com), don't forget to load your settings.json file upon deploy as well:
+`meteor deploy yourappname --settings settings.json`   
 
 3.  **Change default admin usernames**  
 Located in app.js - line 6   
@@ -92,7 +101,7 @@ Note: Error handling from Mailchimp responses are NOT hooked up yet, so if you t
 
 ## Disclaimer  
 
-This code is provided "as is" with no warranties. It'll probably break and may expose your api keys. Proceed with caution.
+This code is provided "as is" with no warranties. It'll probably break and may expose your api keys and all of your customers' email addresses. Proceed with caution.
 
 ### License
 
