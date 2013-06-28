@@ -1,19 +1,4 @@
-## In process: proceed with caution  
-
-Notable TODOs:  
-
-1.  ~~Hook up Mailchimp via API~~  
-2.  ~~Add API keys via settings.json~~
-3.  Security review & double check
-4.  Better error handling from Mailchimp API
-5.  ~~Documentation + finish "getting started" tutorial~~
-
-Wishlist:
-
-1.  Custom "thank you" landing page (after user clicks the email confirmation link)
-2.  Move Github admin login button to a second page, accessible via an admin link on the main landing page
- 
-## meteor-coming-soon-email-capture  
+## Meteor-coming-soon-email-capture  
 The goal of this project is threefold:  
 
 1. To provide a simple "coming soon" landing page with an email capture form (like the old LaunchRock) that integrates with Mailchimp.  
@@ -39,6 +24,22 @@ Please go easy on my Mailchimp account. I'll try to flush out any subscribed ema
 2. Added Twitter Bootstrap and a freely-usable placeholder design.
 
 See [original README](https://github.com/FrozenRidge/mongolab-meteor-leadcapture-app) for further details on the app. The fine folks at [Frozen Ridge](http://frozenridge.co/) also put together a great [blog post](http://blog.mongolab.com/2013/05/build-your-own-lead-capture-page-with-meteor-and-mongolab-in-minutes/) detailing how they built the app.
+
+### Notable TODOs:  
+
+1.  ~~Hook up Mailchimp via API~~  
+2.  ~~Add API keys via settings.json~~
+3.  Security review & double check (!!!)
+4.  Better error handling from Mailchimp API
+5.  ~~Documentation + finish "getting started" tutorial~~
+
+### Wishlist:
+
+1.  Custom "thank you" landing page (after user clicks the email confirmation link)
+2.  Move Github admin login button to a second page, accessible via an admin link on the main landing page (COMPLETED: See [separate_admin_page](https://github.com/chadokruse/meteor-coming-soon-email-capture/tree/separate_admin_page) branch. If using that branch, you need to install meteorite and add the router package.
+`npm install -g meteorite`  
+`mrt add router`
+
 
 ## Getting started
 
