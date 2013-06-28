@@ -5,47 +5,33 @@
 </head>
 
 <body>
+  {{> header}}
+  <div class='container'>
+    <div id='content-wrapper'>
+      <div class='row'>
+        <div class='span12'>
+            {{renderPage}}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 
-  <header class='navbar navbar-fixed-top navbar-inverse'>
+<template name= "header">
+    <header class='navbar navbar-fixed-top navbar-inverse'>
     <nav class='navbar-inner'>
       <div class='container'>
         <a href="/" class="brand">Meteor - Coming Soon Email Capture</a>
         <ul class='nav pull-right'>
           <li><a href="mailto:hello@example.com">Contact</a></li>
-          <!-- Login is only relevant to Admin users - moving to footer to de-emphasize
+          <!-- Login is only relevant to Admin users - moved to footer to de-emphasize
           <li><a href="/users/sign_in">Login</a></li>
           -->
         </ul>
       </div>
     </nav>
   </header>
-
-  <div class='container'>
-    <div id='content-wrapper'>
-      <div class='row'>
-        <div class='span12'>
-            {{> main }}
-        </div>
-      </div>
-    </div>
-    <footer class="navbar navbar-fixed-bottom">
-      <div class='footer'>
-        {{> footer }}
-      </div>
-    </footer>
-  </div>
-
-</body>
-
-
-<template name = "main">
-  {{#if showAdmin}}
-    {{> admin}}
-  {{else}}
-    {{> landing}}
-  {{/if}}
 </template>
-
 
 <template name = "landing">
   <div id="welcome">
@@ -65,17 +51,6 @@
     </div>
   </div>
 </template>
-
-
-<template name = "footer">
-  <!-- Hide original FrozenRidge brand and link. Ping them about including in new footer, if desired -->
-  <!-- <a href = "http://frozenridge.co">FrozenRidge | Solving hard problems for business</a> -->
-  {{#if isAdmin}}
-  <a href = "#" class = "admin">toggle admin</a>
-  {{/if}}
-  {{loginButtons}}
-</template>
-
 
 <template name = "signup">
   {{#if emailSubmitted }}
@@ -100,20 +75,29 @@
 
 </template>
 
-
-<template name = "admin">
-  <h1>Signed up Customers</h1>
-  <table>
-    <tr><th>Customer Email</th><th>Referrer</th><th>Time</th></tr>
-    {{#each emails}}
-      <tr><td>{{ this.email }}</td><td>{{ this.referrer }}</td><td>{{ this.timestamp }}</td></tr>
-    {{/each }}
-  </table>
-</template>
-
-
 <template name="badEmail">
   <div id="email-submit-error" class="alert alert-danger">
     Please enter a valid email
   </div>
+</template>
+
+<template name = "admin">
+  <!-- Many thanks to the FrozenRidge crew for the admin functionality -->
+  <!-- <a href = "http://frozenridge.co">FrozenRidge | Solving hard problems for business</a> -->
+
+  <h1>Administrators</h1>
+  {{loginButtons}}
+
+  {{#if isAdmin}}
+  <div class="well top-buffer">
+   <h3>Signed up Customers</h3>
+    <table>
+      <tr><th>Customer Email</th><th>Referrer</th><th>Time</th></tr>
+      {{#each emails}}
+        <tr><td>{{ this.email }}</td><td>{{ this.referrer }}</td><td>{{ this.timestamp }}</td></tr>
+      {{/each }}
+    </table>
+  </div>
+  {{/if}}
+
 </template>

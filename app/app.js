@@ -15,17 +15,25 @@ function isAdmin() {
 
 if (Meteor.isClient) {
 
+  // Routes
+  Meteor.Router.add({
+    '/': 'landing',
+    '/admin': 'admin',
+  });
+  // End Routes
+
   Meteor.subscribe('userData');
   Meteor.subscribe('emails');
-  Template.footer.events({
+  Template.admin.events({
     'click .login' : function(evt, tmpl){
       Meteor.loginWithGithub();
       return false;
     },
-
+/* Since we're now using a separate admin page, we can remove the "toggle admin" feature used in the original tutorial
     'click .admin' : function(evt, tmpl){
       Session.set("showAdmin", !Session.get("showAdmin"));
-    }
+    } 
+*/
    })
 
   Template.signup.events({
@@ -70,9 +78,9 @@ if (Meteor.isClient) {
     return Session.get("emailSubmitted");
   };
 
-  Template.footer.isAdmin = isAdmin;
+  Template.admin.isAdmin = isAdmin;
 
-  Template.main.showAdmin = function() {
+  Template.admin.showAdmin = function() {
     return Session.get("showAdmin");
   };
 
