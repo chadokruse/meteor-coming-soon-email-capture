@@ -1,110 +1,110 @@
 #configure-login-service-dialog {
-	-webkit-box-shadow: 0px 0px 10px #000;
-	-moz-box-shadow: 0px 0px 10px #000;
-	box-shadow: 0px 0px 10px #000;
+  -webkit-box-shadow: 0px 0px 10px #000;
+  -moz-box-shadow: 0px 0px 10px #000;
+  box-shadow: 0px 0px 10px #000;
 }
 
 /* Admin page */
 .top-buffer {
-	margin-top: 25px;
+  margin-top: 25px;
 }
 
 /* From Rails Prelaunch */
 body {
-	padding-top:60px;
+  padding-top:60px;
 }
 
 #content-wrapper {
-	background-color:#fff;
-	padding:20px;
-	margin:0 -20px;
-	-webkit-border-radius:0 0 6px 6px;
-	-moz-border-radius:0 0 6px 6px;
-	border-radius:0 0 6px 6px;
-	-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.15);
-	-moz-box-shadow:0 1px 2px rgba(0,0,0,0.15);
-	box-shadow:0 1px 2px rgba(0,0,0,0.15);
+  background-color:#fff;
+  padding:20px;
+  margin:0 -20px;
+  -webkit-border-radius:0 0 6px 6px;
+  -moz-border-radius:0 0 6px 6px;
+  border-radius:0 0 6px 6px;
+  -webkit-box-shadow:0 1px 2px rgba(0,0,0,0.15);
+  -moz-box-shadow:0 1px 2px rgba(0,0,0,0.15);
+  box-shadow:0 1px 2px rgba(0,0,0,0.15);
 }
 
 #welcome {
-	text-align:center;
+  text-align:center;
 }
 
 #welcome .hero-unit {
-	background:url(./bg.png);
-	padding:40px;
+  background:url(./bg.png);
+  padding:40px;
 }
 
 #welcome h1 {
-	margin-bottom:40px;
+  margin-bottom:40px;
 }
 
 #welcome #request-invite {
-	padding-top:20px;
+  padding-top:20px;
 }
 
 #welcome #request-invite h1 {
-	color:#51A351;
-	margin-bottom:0;
+  color:#51A351;
+  margin-bottom:0;
 }
 
 #welcome #request-invite .alert-error {
-	position:relative;
-	top:-15px;
-	margin-bottom:0;
+  position:relative;
+  top:-15px;
+  margin-bottom:0;
 }
 
 #welcome .help-block {
-	font-size:10px;
-	color:gray;
-	margin-top:15px;
+  font-size:10px;
+  color:gray;
+  margin-top:15px;
 }
 
 #welcome #well {
-	margin-left:0;
-	text-align:left;
+  margin-left:0;
+  text-align:left;
 }
 
 #welcome .span4 label {
-	font-size:16px;
-	font-weight:700;
-	color:#0073CC;
-	position:relative;
-	top:-15px;
-	margin-bottom: 10px; // Total hack
+  font-size:16px;
+  font-weight:700;
+  color:#0073CC;
+  position:relative;
+  top:-15px;
+  margin-bottom: 10px; /* Total hack */
 }
 
 #welcome .span4.text_only {
-	margin-top:5px;
+  margin-top:5px;
 }
 
 #email-submit-error {
-	position: relative;
-	top: -10px;
-	margin-bottom: 0px;
+  position: relative;
+  top: -10px;
+  margin-bottom: 0px;
 }
 
 #welcome #thanks {
-	position:relative;
-	top:-5px;
-	left:5px;
+  position:relative;
+  top:-5px;
+  left:5px;
 }
 
 .btn.loading {
-	background-image:-webkit-gradient(linear,0 0,100% 100%,color-stop(0.25,rgba(0,0,0,0.1)),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(0,0,0,0.1)),color-stop(0.75,rgba(0,0,0,0.1)),color-stop(0.75,transparent),to(transparent));
-	background-image:-moz-linear-gradient(-45deg,rgba(0,0,0,0.1) 25%,transparent 25%,transparent 50%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.1) 75%,transparent 75%,transparent);
-	background-size:50px 50px;
-	-moz-background-size:50px 50px;
-	-webkit-background-size:50px 50px;
-	-webkit-animation:animate-stripes 2s linear infinite;
+  background-image:-webkit-gradient(linear,0 0,100% 100%,color-stop(0.25,rgba(0,0,0,0.1)),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(0,0,0,0.1)),color-stop(0.75,rgba(0,0,0,0.1)),color-stop(0.75,transparent),to(transparent));
+  background-image:-moz-linear-gradient(-45deg,rgba(0,0,0,0.1) 25%,transparent 25%,transparent 50%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.1) 75%,transparent 75%,transparent);
+  background-size:50px 50px;
+  -moz-background-size:50px 50px;
+  -webkit-background-size:50px 50px;
+  -webkit-animation:animate-stripes 2s linear infinite;
 }
 
 @-webkit-keyframes animate-stripes {
-	from {
-		background-position:0 0;
-	}
-	
-	to {
-		background-position:-50px 0;
-	}
+  from {
+    background-position:0 0;
+  }
+
+  to {
+    background-position:-50px 0;
+  }
 }

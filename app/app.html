@@ -17,7 +17,7 @@
   </div>
 </body>
 
-<template name= "header">
+<template name="header">
     <header class='navbar navbar-fixed-top navbar-inverse'>
     <nav class='navbar-inner'>
       <div class='container'>
@@ -33,7 +33,7 @@
   </header>
 </template>
 
-<template name = "landing">
+<template name="landing">
   <div id="welcome">
     <div class="hero-unit">
       <h1>This and that<br>with <span style="color:#0073cc;">these</span> things</h1>
@@ -43,7 +43,7 @@
     <div id="well" class="row well">
       <div class="span4 offset2 text_only">We're fanatical about the speed of our service. To ensure a great experience for all of our users we're inviting people on a rolling basis. Enter your email to the right and we'll keep you posted on our progress. We'll get you your invite as soon as we can!
       </div>
-      <div class="span4"> 
+      <div class="span4">
         <div id="request-invite" class="form-inline">
             {{> signup}}
         </div>
@@ -52,7 +52,7 @@
   </div>
 </template>
 
-<template name = "signup">
+<template name="signup">
   {{#if emailSubmitted }}
   <div id="thanks">
     <h1>Thank You!</h1>
@@ -64,7 +64,7 @@
         {{> badEmail}}
       {{else }}
       <label style="display: block;">Launching soon.</label>
-      {{/if}} 
+      {{/if}}
       <div class="input-prepend">
         <span class="add-on"><i class="icon-envelope"></i></span>
         <input type="text" value="" class="" id="email-for-mailchimp" placeholder="Your email address..." size="30">
@@ -81,12 +81,16 @@
   </div>
 </template>
 
-<template name = "admin">
+<template name="adminLogin">
+  {{> loginButtons}}
+</template>
+
+<template name="admin">
   <!-- Many thanks to the FrozenRidge crew for the admin functionality -->
   <!-- <a href = "http://frozenridge.co">FrozenRidge | Solving hard problems for business</a> -->
 
   <h1>Administrators</h1>
-  {{loginButtons}}
+  {{> loginButtons}}
 
   {{#if isAdmin}}
   <div class="well top-buffer">

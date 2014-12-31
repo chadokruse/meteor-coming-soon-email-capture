@@ -1,4 +1,4 @@
-Emails = new Meteor.Collection("emails")
+Emails = new Meteor.Collection("emails");
 
 EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -6,7 +6,7 @@ EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@(
 var ADMIN_USERS = ['someusername', 'anotherperson', 'howaboutathird'];
 function isAdmin() {
   try {
-    return ADMIN_USERS.indexOf(Meteor.user().services.github.username) !== -1
+    return ADMIN_USERS.indexOf(Meteor.user().services.github.username) !== -1;
   } catch(e) {
     return false;
   }
@@ -14,11 +14,22 @@ function isAdmin() {
 
 
 if (Meteor.isClient) {
-
   // Routes
-  Meteor.Router.add({
-    '/': 'landing',
-    '/admin': 'admin',
+  Router.map(function () {
+    // home page
+    this.route('landing', {
+      path: '/',
+    });
+    // admin page
+    this.route('admin', {
+      onBeforeAction: function () {
+        if (!isAdmin())
+          this.render('adminLogin');
+        else
+          this.next();
+      },
+      path: '/admin'
+    });
   });
   // End Routes
 
@@ -29,18 +40,18 @@ if (Meteor.isClient) {
       Meteor.loginWithGithub();
       return false;
     },
-/* Since we're now using a separate admin page, we can remove the "toggle admin" feature used in the original tutorial
+    /* Since we're now using a separate admin page, we can remove the "toggle admin" feature used in the original tutorial
     'click .admin' : function(evt, tmpl){
       Session.set("showAdmin", !Session.get("showAdmin"));
-    } 
-*/
-   })
+    }
+    */
+  });
 
   Template.signup.events({
     'submit form' : function (evt, tmpl) {
       console.log("Form Input Button Clicked");
-      var email = tmpl.find('#email-for-mailchimp').value
-      , doc = {email: email, referrer: document.referrer, timestamp: new Date()}
+      var email = tmpl.find('#email-for-mailchimp').value;
+      var doc = {email: email, referrer: document.referrer, timestamp: new Date()};
 
       if (EMAIL_REGEX.test(email)){
         Session.set("showBadEmail", false);
@@ -53,41 +64,42 @@ if (Meteor.isClient) {
           Session.set("showBadEmail", true);
         } else {
           console.log("respJson: ", respJson);
-          
         }
       });
-        
+
         Emails.insert(doc);
-        console.log("Posted to db")
+        console.log("Posted to db");
         Session.set("emailSubmitted", true);
-        
+
       } else {
         Session.set("showBadEmail", true);
-        console.log("REGEX Test Failed")
+        console.log("REGEX Test Failed");
       }
       return false;
 
     }
   });
 
-  Template.signup.showBadEmail = function () {
-    return Session.get("showBadEmail");
-  };
+  Template.signup.helpers({
+    showBadEmail: function () {
+      return Session.get("showBadEmail");
+    },
+    emailSubmitted: function () {
+      return Session.get("emailSubmitted");
+    }
+  });
 
-  Template.signup.emailSubmitted = function () {
-    return Session.get("emailSubmitted");
-  };
-
-  Template.admin.isAdmin = isAdmin;
-
-  Template.admin.showAdmin = function() {
-    return Session.get("showAdmin");
-  };
-
-  Template.admin.emails = function() {
-    return Emails.find().fetch();
-  };
-
+  Template.admin.helpers({
+    showAdmin: function() {
+      return Session.get("showAdmin");
+    },
+    emails: function() {
+      return Emails.find().fetch();
+    },
+    isAdmin: function() {
+      return isAdmin;
+    }
+  });
 }
 
 

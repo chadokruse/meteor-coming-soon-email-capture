@@ -1,17 +1,16 @@
-## Meteor-coming-soon-email-capture  
-The goal of this project is threefold:  
+## Meteor-coming-soon-email-capture
+This project merges a popular [ruby on rails project](https://github.com/RailsApps/rails-prelaunch-signup) with a [meteor sample app](https://github.com/FrozenRidge/mongolab-meteor-leadcapture-app). Its sole purpose was to give me a reason to check out Meteor and improve my javascript skills, but hopefully you can find value in it.
 
-1. To provide a simple "coming soon" landing page with an email capture form (like the old LaunchRock) that integrates with Mailchimp.  
+The goal of this project was threefold:
 
-2. Improve the signup experience by using the Mailchimp API instead of the standard Mailchimp embed code (requires server side code to hide your API keys). We'll make an AJAX call to the API, and upon success provide a simple "thank you" message in-app (instead of a jarring redirect to a Mailchimp success page).  
+1. To provide a simple "coming soon" landing page with an email capture form (like the old LaunchRock) that integrates with Mailchimp.
+
+2. Improve the signup experience by using the Mailchimp API instead of the standard Mailchimp embed code (requires server side code to hide your API keys). We'll make an AJAX call to the API, and upon success provide a simple "thank you" message in-app (instead of a jarring redirect to a Mailchimp success page).
 
 3. Host it for free.
 
-This project merges a popular [ruby on rails project](https://github.com/RailsApps/rails-prelaunch-signup) with a [meteor sample app](https://github.com/FrozenRidge/mongolab-meteor-leadcapture-app). Its sole purpose was to give me a reason to check out Meteor and improve my javascript skills, but hopefully you can find value in it.
-
-### Demo
-[Live demo](https://github.com/chadokruse/meteor-coming-soon-email-capture)  
-Please go easy on my Mailchimp account. I'll try to flush out any subscribed emails from time to time.
+### UPDATE (Dec 2014)
+Upgraded to Meteor 1.0.2.1 & added iron-router. Note: Check out the [`alanning:roles`](https://atmospherejs.com/alanning/roles) package for an updated (and more secure) way to handle the isAdmin function.
 
 ### Screenshots
 
@@ -23,12 +22,13 @@ Please go easy on my Mailchimp account. I'll try to flush out any subscribed ema
 1. Emails submitted will also be added to a Mailchimp account (in addition to the db), using [double opt-in](http://kb.mailchimp.com/article/how-does-confirmed-optin-or-double-optin-work).
 2. Added Twitter Bootstrap and a freely-usable placeholder design.
 3. Admin functionality has been removed from the main page and placed on a separate admin page, accessible only by navigating directly to /admin (e.g. localhost:3000/admin).
+4. Uses iron-router instead of the old meteor-router package
 
 See [original README](https://github.com/FrozenRidge/mongolab-meteor-leadcapture-app) for further details on the app. The fine folks at [Frozen Ridge](http://frozenridge.co/) also put together a great [blog post](http://blog.mongolab.com/2013/05/build-your-own-lead-capture-page-with-meteor-and-mongolab-in-minutes/) detailing how they built the app.
 
-### Notable TODOs:  
+### Notable TODOs:
 
-1.  ~~Hook up Mailchimp via API~~  
+1.  ~~Hook up Mailchimp via API~~
 2.  ~~Add API keys via settings.json~~
 3.  Security review & double check (!!!)
 4.  Better error handling from Mailchimp API
@@ -37,7 +37,7 @@ See [original README](https://github.com/FrozenRidge/mongolab-meteor-leadcapture
 ### Wishlist:
 
 1.  Custom "thank you" landing page (after user clicks the email confirmation link)
-2.  Move Github admin login button to a second page, accessible via an admin link on the main landing page (COMPLETED) 
+2.  Move Github admin login button to a second page, accessible via an admin link on the main landing page (COMPLETED)
 
 
 
@@ -47,9 +47,9 @@ See [original README](https://github.com/FrozenRidge/mongolab-meteor-leadcapture
 
 You need to have Node.js and Meteor installed.
 
-### Node  
+### Node
 
-I use Homebrew and found [this tutorial](http://madebyhoundstooth.com/blog/install-node-with-homebrew-on-os-x/) helpful.  
+I use Homebrew and found [this tutorial](http://madebyhoundstooth.com/blog/install-node-with-homebrew-on-os-x/) helpful.
 
 ### Meteor
 
@@ -57,41 +57,33 @@ Install Meteor:
 
 `curl https://install.meteor.com | sh`
 
-Install Meteorite:
-
-`npm install -g meteorite` 
-
-Add Router package:
-
-`mrt add router`  
-
 cd into the app
 
 `cd what/ever/your/path/is/meteor-coming-soon-email-capture/app`
 
 Start Meteor
 
-`meteor`
+`meteor --settings settings.json`
 
 Open the app in your browser
 
 `http://localhost:3000/`
 
 ### Usage
-1.  **Insert your Mailchimp credentials**  
-These are located in `settings.json.example`. Be sure to save the new file as `settings.json` (e.g. remove the "example" extension).  
-Note: Here's [how to find your API Key](http://kb.mailchimp.com/article/where-can-i-find-my-api-key), and here's [how to find your List ID](http://kb.mailchimp.com/article/how-can-i-find-my-list-id).  
+1.  **Insert your Mailchimp credentials**
+These are located in `settings.json.example`. Be sure to save the new file as `settings.json` (e.g. remove the "example" extension).
+Note: Here's [how to find your API Key](http://kb.mailchimp.com/article/where-can-i-find-my-api-key), and here's [how to find your List ID](http://kb.mailchimp.com/article/how-can-i-find-my-list-id).
 
-2.  **Load your settings.json file**   
-`meteor --settings settings.json`  
+2.  **Load your settings.json file**
+`meteor --settings settings.json`
 Notes: (a) Be sure meteor is not already running. (b) If you're going to deploy this to meteor's free hosting (i.e. yourappname.meteor.com), don't forget to load your settings.json file upon deploy as well:
-`meteor deploy yourappname --settings settings.json`   
+`meteor deploy yourappname --settings settings.json`
 
-3.  **Change default admin usernames**  
-Located in app.js - line 6   
+3.  **Change default admin usernames**
+Located in app.js - line 6
 ```
 var ADMIN_USERS = ['someusername', 'anotherperson', 'howaboutathird'];
-```  
+```
 Enter your github username
 
 That's it. Add your email to the form and hit submit. You should receive an email confirmation from Mailchimp if all is well.
@@ -99,13 +91,13 @@ That's it. Add your email to the form and hit submit. You should receive an emai
 Note: Error handling from Mailchimp responses are NOT hooked up yet, so if you test using test@example.com, it'll write to the db but Mailchimp will throw an error (Mailchimp doesn't like anything@example.com).
 
 
-## Disclaimer  
+## Disclaimer
 
 This code is provided "as is" with no warranties. It'll probably break and may expose your api keys and all of your customers' email addresses. Proceed with caution.
 
 ### License
 
-Do with it as you wish, commercial or otherwise. If you like formal licenses: Copyright (c) 2013 Chad Kruse, released under the MIT license.  
+Do with it as you wish, commercial or otherwise. If you like formal licenses: Copyright (c) 2013 Chad Kruse, released under the MIT license.
 
 See [original meteor app](https://github.com/FrozenRidge/mongolab-meteor-leadcapture-app) for licensing covering their work (github login, add email form entry to db, etc.)
 
